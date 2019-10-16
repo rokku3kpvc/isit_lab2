@@ -1,0 +1,4 @@
+=render partial: 'form'
+.calculation-results
+  -@results.each do |result|
+    =render partial: 'ner_results', locals: { result: result }

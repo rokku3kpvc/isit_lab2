@@ -1,0 +1,15 @@
+error = '<%= j render partial: 'shared/alert' %>'
+modalBody = $('.calculation-results')
+header = $('header')
+result = '<%= j render partial: 'ner_results', locals: { result: @result } %>'
+
+console.log(error)
+
+if (error === "\n") { //no error
+    modalBody.append(result)
+}
+else {  //error
+    header.empty()
+    header.append(error)
+    error = "\n"
+}
